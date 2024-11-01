@@ -3,6 +3,12 @@ import Header from "./component/Header.js";
 import Body from "./component/Body.js";
 import Footer from "./component/Footer.js";
 
+function ChidComp() {
+  return (
+    <div>Child Component</div>
+  );
+}
+
 function App() {
   const stuInfo = {
     name: "John Park",
@@ -16,8 +22,9 @@ function App() {
       <Header />
       {/* <Body name={stuInfo.Name} age={stuInfo.Age} addr={stuInfo.addr} /> */}
       <Body {...stuInfo} />
-
-      <Footer />
+      <Footer>
+        <ChidComp /> {/* 컴포넌트를 props로 전달 하기 */}
+      </Footer>
     </div>
   );
 }

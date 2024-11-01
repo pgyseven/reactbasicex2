@@ -1,7 +1,8 @@
-function Footer() {
+function Footer({children}) {
+    console.log(children)
     return(
         <footer>
-            <h1>footer</h1>
+            <h1>{children}</h1>
         </footer>
 
     );
