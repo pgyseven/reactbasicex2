@@ -6,7 +6,7 @@ function Body() {
         setCount(count + 1);
     };
 
-    const onDecrasement = function() {
+    const onDecrasement = () => {
         if (count > 0) {
             setCount(count - 1);
         }
