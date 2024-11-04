@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 function Body() {
-    
-    function handleOnClick(e) {
-        console.log(e.target);
-        if (e.target.name === 'A') {  
-            alert('Button A clicked!');
-        }else if (e.target.name === 'B') {
-            alert('Button B clicked!');
-        } 
-    }
+    const [count, setCount] = useState(0); // useState 객체 생성 / 구조분해와 같은 구조 즉 useState는 배열을 반환
+
+    const onIncreasement = function() {
+        setCount(count + 1);
+    };
+
+    const onDecrasement = function() {
+        if (count > 0) {
+            setCount(count - 1);
+        }
+    };
+
     return (
         <div className='body'>
-            <button name="A" onClick={handleOnClick}>클릭A</button>
-            <button name="B" onClick={handleOnClick}>클릭B</button>
+
+            <button onClick={onIncreasement}>+</button>
+            {count}
+            <button onClick={onDecrasement}>-</button>
 
         </div>
     );
